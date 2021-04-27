@@ -217,3 +217,45 @@ for i in temp3:
 print(result)
 
 
+
+
+
+
+
+
+def NthCharacter(n):
+    s = ""
+    c = 1
+
+    while(True):
+
+        if (c < 10):
+            s += chr(48 + c)
+
+        else:
+            s1 = ""
+            dup = c
+
+            while (dup > 0):
+                s1 += chr((dup % 10) + 48)
+                dup //= 10
+
+            s1 = "".join(reversed(s1))
+
+            s += s1
+        c += 1
+
+        if (len(s) >= n):
+            return s[n - 1]
+
+
+# Driver Code
+if __name__ == "__main__":
+
+    n = 13
+    print(NthCharacter(n))
+
+# This code is contributed by ita_c
+
+
+
